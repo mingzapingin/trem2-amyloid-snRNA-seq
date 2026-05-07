@@ -207,63 +207,34 @@ setwd("/path/to/scRNA")
 
 
 | Order | Script | Output directory | Time |
-
 |:------|:-------|:-----------------|:-----|
-
 | 1 | 01_load_samples.R | processed/ | 5 min |
-
 | 2 | 02_qc_filter.R | processed/, result/filter_plot/ | 5 min |
-
 | 3 | 03_normalize_cluster.R | processed/, result/cluster_plots/ | 10 min |
-
 | 4 | 04_broad_marker_explore.R | result/annotation_plots/ | 10 min |
-
 | 5 | 05_assign_broad_types.R | processed/ | 2 min |
-
 | 6 | 06_build_reference.R | processed/allen_references/ | 30-60 min |
-
 | 7 | 07_transfer_label.R | processed/transfer_objects/ | 30-60 min |
-
 | 8 | 08_filter_merge_labels.R | processed/, result/transfer_qc/ | 10 min |
-
 | 9 | 09_01_q1.R | result/de_results/Q1_*/ | 15 min |
-
 | 10 | 09_02_q2.R | result/de_results/Q2_*/ | 15 min |
-
 | 11 | 09_03_q3.R | result/de_results/Q3_*/ | 15 min |
-
 | 12 | 09_04_q4.R | result/de_results/Q4a-Q4d/ | 20 min |
-
 | 13 | 09_05_q1q2q3_broad.R | result/de_results/Q*_broad_*/ | 10 min |
-
 | 14 | 09_06_q4_broad.R | result/de_results/Q4*_broad_*/ | 10 min |
-
 | 15 | 09_07_7m_global.R | result/de_results/Q*_global_*/ | 5 min |
-
 | 16 | 10_cross_comparison.R | result/de_results/cross_comparison/ | 5 min |
-
 | 17 | 10_01_broad_cross_comparison.R | result/de_results/cross_comparison_broad/ | 5 min |
-
 | 18 | 10_02_cross_comparison_global.R | result/de_results/cross_comparison_global/ | 2 min |
-
 | 19 | 10_03_cross_comparison_broad_vs_global.R | result/cross_comparison/broad_vs_global/ | 2 min |
-
 | 20 | 10_04_cross_comparison_subtype_vs_global.R | result/cross_comparison/subtype_vs_global/ | 5 min |
-
 | 21 | 10_05_master_gene_table.R | result/cross_comparison/master_gene_table/ | 2 min |
-
 | 22 | 11_01_ora_subtype.R | result/ora_results/subtype/ | 20 min |
-
 | 23 | 11_02_ora_broad.R | result/ora_results/broad/ | 10 min |
-
 | 24 | 12_01_gsea_subtype.R | result/gsea_results/subtype/ | 20 min |
-
 | 25 | 12_02_gsea_broad.R | result/gsea_results/broad/ | 10 min |
-
 | 26 | 14_01_partition_ora_broad.R | result/pathway/partition_ora/broad/ | 10 min |
-
 | 27 | 14_02_partition_ora_subtype.R | result/pathway/partition_ora/subtype/ | 15 min |
-
 | 28 | export_shiny.R | shiny_data/ | 5 min |
 
 
@@ -297,11 +268,8 @@ shiny::runApp()
 
 
 | Cohort | Samples | Conditions | Replicates | DE method |
-
 |--------|---------|------------|------------|-----------|
-
 | 7-month | 12 | WT, Trem2_KO, WT_5XFAD, Trem2_KO_5XFAD | n=3 per condition | Pseudobulk DESeq2 |
-
 | 15-month | 8 | Same 4 conditions × 2 regions (Cor, Hip) | n=1 per condition×region | Cell-level Wilcoxon (exploratory) |
 
 
@@ -311,13 +279,9 @@ shiny::runApp()
 
 
 | Question | Comparison | What it isolates |
-
 |----------|------------|------------------|
-
 | Q1 | WT vs WT_5XFAD | Amyloid effect |
-
 | Q2 | WT_5XFAD vs Trem2_KO_5XFAD | Trem2 KO effect in amyloid context |
-
 | Q3 | WT vs Trem2_KO | Trem2 KO effect alone |
 
 
@@ -327,19 +291,12 @@ shiny::runApp()
 
 
 | Category | Q1 | Q2 | Q3 | Interpretation |
-
 |----------|----|----|-----|----------------|
-
 | Cat1 | DE | not DE | not DE | Pure amyloid response |
-
 | Cat2 | DE | DE (reversed/weaker) | — | Trem2-dependent amyloid response |
-
 | Cat3 | DE | not DE | DE | Amyloid and Trem2 KO affect independently |
-
 | Cat4 | DE | DE (same, >1.5×) | — | Trem2 KO amplifies amyloid effect |
-
 | Cat5 | not DE | — | DE | Trem2-autonomous |
-
 | Cat6 | not DE | DE | — | Novel program from amyloid + Trem2 KO combined |
 
 
@@ -365,21 +322,13 @@ DE, cross-comparison, ORA, and GSEA are performed at three hierarchical levels:
 
 
 | Package | Version | Use |
-
 |---------|---------|-----|
-
 | Seurat | v5 | Single-cell analysis, label transfer |
-
 | DESeq2 | — | Pseudobulk differential expression |
-
 | clusterProfiler | — | GO BP, KEGG ORA and GSEA |
-
 | ReactomePA | — | Reactome ORA and GSEA |
-
 | fgsea | — | SynGO GSEA |
-
 | msigdbr | — | Hallmark gene sets |
-
 | rhdf5 | — | Reading Allen HDF5 reference |
 
 
@@ -389,11 +338,7 @@ DE, cross-comparison, ORA, and GSEA are performed at three hierarchical levels:
 
 
 | Source | URL | Local path |
-
 |--------|-----|------------|
-
 | GEO GSE140511 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE140511 | `raw_data/7m/`, `raw_data/15m/` |
-
 | Allen Brain Cell Atlas | https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas | `raw_data/reference/`, `metadata/reference_metadata.csv` |
-
 | SynGO | https://syngoportal.org/download | `metadata/synGO/` |
