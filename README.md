@@ -206,65 +206,65 @@ setwd("/path/to/scRNA")
 
 
 
-| Order | Script | What it generates | Approx time |
+| Order | Script | Output directory | Time |
 
-|-------|--------|-------------------|-------------|
+|:------|:-------|:-----------------|:-----|
 
-| 1 | `01_load_samples.R` | `processed/seurat_*_raw.rds` | 5 min |
+| 1 | 01_load_samples.R | processed/ | 5 min |
 
-| 2 | `02_qc_filter.R` | `processed/seurat_*_qc.rds`, `result/filter_plot/`, `result/qc_*.csv` | 5 min |
+| 2 | 02_qc_filter.R | processed/, result/filter_plot/ | 5 min |
 
-| 3 | `03_normalize_cluster.R` | `processed/seurat_*_clustered.rds`, `result/cluster_plots/`, `result/cluster_tables/` | 10 min |
+| 3 | 03_normalize_cluster.R | processed/, result/cluster_plots/ | 10 min |
 
-| 4 | `04_broad_marker_explore.R` | `result/annotation_plots/`, `result/annotation_tables/`, `result/markers/` | 10 min |
+| 4 | 04_broad_marker_explore.R | result/annotation_plots/ | 10 min |
 
-| 5 | `05_assign_broad_types.R` | `processed/seurat_*_broad_typed.rds` | 2 min |
+| 5 | 05_assign_broad_types.R | processed/ | 2 min |
 
-| 6 | `06_build_reference.R` | `processed/allen_references/*.rds`, `result/reference_subset/` | 30–60 min |
+| 6 | 06_build_reference.R | processed/allen_references/ | 30-60 min |
 
-| 7 | `07_transfer_label.R` | `processed/transfer_objects/*.rds`, `result/transfer_labels/` | 30–60 min |
+| 7 | 07_transfer_label.R | processed/transfer_objects/ | 30-60 min |
 
-| 8 | `08_filter_merge_labels.R` | `processed/seurat_*_final_annotated.rds`, `result/transfer_qc/` | 10 min |
+| 8 | 08_filter_merge_labels.R | processed/, result/transfer_qc/ | 10 min |
 
-| 9 | `09_01_q1.R` | `result/de_results/Q1_WT_vs_WT5XFAD/` | 15 min |
+| 9 | 09_01_q1.R | result/de_results/Q1_*/ | 15 min |
 
-| 10 | `09_02_q2.R` | `result/de_results/Q2_*/` | 15 min |
+| 10 | 09_02_q2.R | result/de_results/Q2_*/ | 15 min |
 
-| 11 | `09_03_q3.R` | `result/de_results/Q3_*/` | 15 min |
+| 11 | 09_03_q3.R | result/de_results/Q3_*/ | 15 min |
 
-| 12 | `09_04_q4.R` | `result/de_results/Q4a–Q4d*/` | 20 min |
+| 12 | 09_04_q4.R | result/de_results/Q4a-Q4d/ | 20 min |
 
-| 13 | `09_05_q1q2q3_broad.R` | `result/de_results/Q*_broad_*/` | 10 min |
+| 13 | 09_05_q1q2q3_broad.R | result/de_results/Q*_broad_*/ | 10 min |
 
-| 14 | `09_06_q4_broad.R` | `result/de_results/Q4*_broad_*/` | 10 min |
+| 14 | 09_06_q4_broad.R | result/de_results/Q4*_broad_*/ | 10 min |
 
-| 15 | `09_07_7m_global.R` | `result/de_results/Q*_global_*/` | 5 min |
+| 15 | 09_07_7m_global.R | result/de_results/Q*_global_*/ | 5 min |
 
-| 16 | `10_cross_comparison.R` | `result/de_results/cross_comparison/` | 5 min |
+| 16 | 10_cross_comparison.R | result/de_results/cross_comparison/ | 5 min |
 
-| 17 | `10_01_broad_cross_comparison.R` | `result/de_results/cross_comparison_broad/` | 5 min |
+| 17 | 10_01_broad_cross_comparison.R | result/de_results/cross_comparison_broad/ | 5 min |
 
-| 18 | `10_02_cross_comparison_global.R` | `result/de_results/cross_comparison_global/` | 2 min |
+| 18 | 10_02_cross_comparison_global.R | result/de_results/cross_comparison_global/ | 2 min |
 
-| 19 | `10_03_cross_comparison_broad_vs_global.R` | `result/cross_comparison/broad_vs_global/` | 2 min |
+| 19 | 10_03_cross_comparison_broad_vs_global.R | result/cross_comparison/broad_vs_global/ | 2 min |
 
-| 20 | `10_04_cross_comparison_subtype_vs_global.R` | `result/cross_comparison/subtype_vs_global/` | 5 min |
+| 20 | 10_04_cross_comparison_subtype_vs_global.R | result/cross_comparison/subtype_vs_global/ | 5 min |
 
-| 21 | `10_05_master_gene_table.R` | `result/cross_comparison/master_gene_table/` | 2 min |
+| 21 | 10_05_master_gene_table.R | result/cross_comparison/master_gene_table/ | 2 min |
 
-| 22 | `11_01_ora_subtype.R` | `result/ora_results/subtype/` | 20 min |
+| 22 | 11_01_ora_subtype.R | result/ora_results/subtype/ | 20 min |
 
-| 23 | `11_02_ora_broad.R` | `result/ora_results/broad/` | 10 min |
+| 23 | 11_02_ora_broad.R | result/ora_results/broad/ | 10 min |
 
-| 24 | `12_01_gsea_subtype.R` | `result/gsea_results/subtype/` | 20 min |
+| 24 | 12_01_gsea_subtype.R | result/gsea_results/subtype/ | 20 min |
 
-| 25 | `12_02_gsea_broad.R` | `result/gsea_results/broad/` | 10 min |
+| 25 | 12_02_gsea_broad.R | result/gsea_results/broad/ | 10 min |
 
-| 26 | `14_01_partition_ora_broad.R` | `result/pathway/partition_ora/broad/` | 10 min |
+| 26 | 14_01_partition_ora_broad.R | result/pathway/partition_ora/broad/ | 10 min |
 
-| 27 | `14_02_partition_ora_subtype.R` | `result/pathway/partition_ora/subtype/` | 15 min |
+| 27 | 14_02_partition_ora_subtype.R | result/pathway/partition_ora/subtype/ | 15 min |
 
-| 28 | `export_shiny.R` | `shiny_data/*.csv` | 5 min |
+| 28 | export_shiny.R | shiny_data/ | 5 min |
 
 
 
