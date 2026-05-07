@@ -1,0 +1,81 @@
+# R / RStudio
+
+.Rhistory
+
+.RData
+
+.Rproj.user/
+
+
+
+# Raw and generated data
+
+raw_data/
+
+processed/
+
+result/
+
+export/
+
+shiny_data/
+
+
+
+# Old / scratch / nonessential
+
+archive/
+
+practice/
+
+
+
+# Large single-cell objects and exports
+
+*.rds
+
+*.RDS
+
+*.h5ad
+
+*.h5seurat
+
+*.loom
+
+
+
+# Raw matrix-style files
+
+*.mtx
+
+*.mtx.gz
+
+*.tsv.gz
+
+
+
+# Metadata files to exclude
+
+metadata/reference_metadata.csv
+
+metadata/synGO/*.xlsx
+
+metadata/synGO/*.zip
+
+
+
+# Keep important metadata and processed SynGO csvs
+
+!metadata/GSE140511_sample_metadata.csv
+
+!metadata/reference_dendrogram.RData
+
+!metadata/synGO/
+
+!metadata/synGO/*.csv
+
+
+
+# System files
+
+.DS_Store
